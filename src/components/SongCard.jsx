@@ -77,7 +77,27 @@ export default class SongCard extends React.Component {
                 onDrop={this.handleDrop}
                 draggable="true"
             >
-                <div className='song-card-number'>{num+'. '}</div><div className='song-card-title'>{song.title}</div><div className='song-card-year'> {'('+song.year+')'} </div><div className='song-card-by'> by </div><div className='song-card-artist'>{song.artist}</div>
+                <div className = 'song-card-info'>
+                    <div className='song-card-number'>{num+'. '}</div>
+                    <div className='song-card-title'>{song.title}</div>
+                    <div className='song-card-year'> {'('+song.year+')'} </div>
+                    <div className='song-card-by'> by </div>
+                    <div className='song-card-artist'>{song.artist}</div>
+                </div>
+                <div className = 'song-card-buttons'>
+                    <input
+                        type="button"
+                        id={"delete-song-" + num}
+                        className="card-button song-card-button"
+                        onClick={this.handleDuplicateList}
+                        value={"⎘"} />
+                    <input
+                        type="button"
+                        id={"delete-song-" + num}
+                        className="card-button song-card-button"
+                        onClick={this.handleDeleteList}
+                        value={"🗑"} />
+                </div>
             </div>
         )
     }
